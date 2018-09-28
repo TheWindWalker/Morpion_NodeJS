@@ -1,0 +1,184 @@
+html, body
+{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	height: 100%;
+}
+
+#main
+{
+	height: 100%;
+	display: flex;
+}
+
+#contacts
+{
+	display:flex;
+	flex-direction: column;
+	background-color:#555;
+	text-align:right;
+	overflow-y:scroll;
+	color:white;
+	width:15%;
+	direction: rtl;
+}
+
+#contacts h1
+{
+	display: block;
+	text-align:center;
+	font-size:1.7em;
+	margin:0 0 0 0;
+	direction:ltr;
+
+}
+
+#partie_droite
+{
+	width:85%;
+	background-color:red;
+	display: flex;
+	flex-direction: column;
+}
+
+#conversation_head
+{
+	color:white;
+	background-color:#555;
+	font-weight:bold;
+	display: block;
+	text-align:center;
+	font-size:1.7em;
+	margin:0 0 0 0;
+}
+
+#conversation
+{
+	background-color:white;
+	height: 85%;
+	overflow-y: scroll;
+	padding: 10px 10px 10px 10px;
+}
+
+.onglet
+{
+
+	padding:10px;
+	font-size:1.2em;
+	cursor: pointer;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	direction:ltr;
+}
+
+.onglet_inactif
+{
+	background-color:#555;
+	color: white;
+}
+
+.onglet_inactif:hover
+{
+	background-color:#EEE;
+	color: black;
+}
+
+.onglet_actif
+{
+	background-color:#FFF;
+	color: black;
+}
+
+
+.onglet_attente
+{
+	color:white;
+	animation-duration: 1s;
+	animation-name: clignotement;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes clignotement
+{
+    from
+    {
+    	background-color:#555;
+    }
+
+    to
+    {
+    	background-color:#ED764D;
+    }
+}
+
+#controles
+{
+	background-color:white;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height:15%;
+}
+
+#message
+{
+	padding: 10px 10px 10px 10px;
+	border: 1px solid #DDD;
+	border-radius: 10px;
+	width:80%;
+	height:80%;
+}
+
+#envoyer
+{
+	width:15%;
+	height:80%;
+	border-radius: 10px;
+	background-color:#DDD;
+	color:black;
+	font-size:2em;
+	text-transform: uppercase;
+}
+
+#envoyer:hover
+{
+	border-radius: 10px;
+
+
+	background-color:#555;
+	color:white;
+}
+
+.message
+{
+	padding: 0 0 0 0;
+	margin-bottom:10px;
+	line-height:2em;
+	background-color:#DDD;
+	border-radius: 10px;
+	box-shadow: 2px 2px #AAA;
+}
+
+.messageHeader
+{
+	padding:0 10px 0 10px;
+	background-color:#555;
+	color: white;
+	display:block;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.messageBody
+{
+	padding:0 10px 0 10px;
+	font-weight: normal;
+	position:relative;
+}
+
+.smiley
+{
+	height:1.5em;
+	transform: translateY(0.4em);
+}

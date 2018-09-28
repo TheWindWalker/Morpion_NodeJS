@@ -3,9 +3,11 @@ var serve_static = require('serve-static');
 var http = require('http');
 
 var users = [];
+
+
 function checkuser(pseudo){
     for(var i=0; i<users.length; i++){
-        if(users[i].pseudo==pseudo){return true;}
+        if(users[i]==pseudo){return true;}
     }
     return false;
 }
@@ -13,16 +15,16 @@ function checkuser(pseudo){
 function add_user(socket,pseudo){
     var User_present= checkuser(pseudo);
     if(User_present== false){
-        var envoie.pseudo=pseudo;
-        var envoie.id=socket.id;
+        var envoie=pseudo;
+        //var envoie.id=socket.id;
         users.push(envoie);
-        socket.emit('connect_success',envoie.pseudo);
-        console.log(envoie.pseudo+" c'est connecté avec l'id: "+envoie.id);
+        //socket.emit('connect_success',envoie.pseudo);
+        console.log(envoie+" c'est connecté avec l'id: ");
     }
     else{
         console.log("User already connected");
-        var message={code:'CONNECT_FAILED', reason:"Pseudo utilisé, veuillez en choisir un autre!"};
-        socket.emit('code',message);
+        //var message={code:'CONNECT_FAILED', reason:"Pseudo utilisé, veuillez en choisir un autre!"};
+        //socket.emit('code',message);
     }
 }
 

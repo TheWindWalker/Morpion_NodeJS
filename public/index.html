@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="style.css"/>
+	<title>ESIEA chat</title>
+</head>
+<body>
+	<div id="main">
+		<div id="contacts">
+			<h1>Contacts</h1>
+			<div id="Salon" class="onglet onglet_actif" onclick="changerOnglet('Salon');">
+				Salon
+			</div>
+		</div>
+		<div id="partie_droite">
+			<div id="conversation_head">
+				Conversation
+			</div>
+			<div id="conversation">
+
+			</div>
+			<div id="controles">
+				<textarea id="message"></textarea>
+				<input type="button" value="Envoyer" onclick="envoyerMessage();" id="envoyer"/>
+			</div>
+		</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+	<script language="javascript">
+		//Code javascript de gestion des sockets
+		var socket = io.connect('http://192.168.2.5:8080');
+		socket.on('connect', function()
+		{
+			var pseudo = prompt("Veuillez choisir un pseudo :");
+			if ((pseudo)&&(pseudo!=""))
+			{
+				socket.emit('login', pseudo);
+			}
+		});
+		//Code javascript
+
+	</script>
+</body>
+</html>
